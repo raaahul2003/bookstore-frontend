@@ -18,21 +18,23 @@ function AdminHeader() {
   }
   return (
     <>
-      <div className='flex items-center justify-between gap-2 p-2 sm:gap-4 sm:p-3'>
+      <header className='border-b border-slate-200 bg-white shadow-sm'>
+      <div className='mx-auto flex max-w-screen-2xl items-center justify-between gap-2 px-4 py-3 sm:gap-4 sm:px-6'>
         <div className='flex min-w-0 items-center'>
           <img className='h-9 w-9 shrink-0 object-contain sm:h-12 sm:w-12' src="https://bookstore-wine-nu.vercel.app/logo.png" alt="" />
-          <h1 className='ms-2 truncate text-lg font-bold sm:ms-3 sm:text-2xl md:text-3xl'>BOOKSTORE</h1>
+          <h1 className='ms-2 truncate font-display text-xl font-bold tracking-tight text-slate-950 sm:ms-3 sm:text-2xl md:text-3xl'>BOOKSTORE</h1>
         </div>
 
         <div className='shrink-0'>
-          <button onClick={logout} className='rounded border border-black px-2 py-2 text-sm sm:px-3 sm:text-base'> <FontAwesomeIcon icon={faRightFromBracket} /> Logout</button>
+          <button onClick={logout} className='rounded-lg border border-slate-300 px-3 py-2 text-sm font-semibold text-slate-700 transition hover:border-red-200 hover:bg-red-50 hover:text-red-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-700 sm:px-4'> <FontAwesomeIcon icon={faRightFromBracket} /> Logout</button>
         </div>
       </div>
-      <nav className='w-full bg-blue-950 px-2 py-3 text-sm text-white sm:px-3 sm:text-base'>
+      <nav className='w-full bg-slate-950 px-2 py-3 text-sm text-slate-200 sm:px-3 sm:text-base'>
         <marquee behavior="" direction="">
           Welcome,  Admin! You're all set to manage and monitor the system. Let’s get to work!
         </marquee>
       </nav>
+      </header>
     </>
   )
 }

@@ -112,11 +112,12 @@ function Auth({ register }) {
 
     return (
         <section id='signup' className='flex min-h-screen w-full flex-col items-center justify-center bg-[url(/auth.jpg)] bg-cover bg-center'>
-            <div className='flex w-full flex-col items-center justify-center px-3 py-6 sm:px-6 sm:py-10'>
-                <div className='flex w-full max-w-lg flex-col items-center justify-center rounded-3xl bg-gray-950/50 p-4 text-white sm:p-6 md:max-w-2xl md:p-8' >
-                    <h1 className='p-3 text-2xl font-bold text-white sm:p-4 sm:text-4xl'>BOOK STORE</h1>
+            <div className='flex min-h-screen w-full flex-col items-center justify-center bg-slate-950/65 px-3 py-6 sm:px-6 sm:py-10'>
+                <div className='flex w-full max-w-lg flex-col items-center justify-center rounded-3xl border border-white/20 bg-slate-950/85 p-5 text-white shadow-2xl backdrop-blur sm:p-8' >
+                    <p className='text-xs font-bold uppercase tracking-[0.25em] text-amber-300'>Welcome to</p>
+                    <h1 className='mt-2 font-display text-4xl font-bold text-white sm:text-5xl'>BOOK STORE</h1>
 
-                    <FontAwesomeIcon icon={faUser} style={{ borderRadius: '50%' }} className='rounded border p-4 text-5xl text-white sm:p-5 sm:text-6xl' />
+                    <FontAwesomeIcon icon={faUser} style={{ borderRadius: '50%' }} className='mt-5 rounded-full border border-white/30 bg-white/10 p-4 text-4xl text-amber-300 sm:p-5 sm:text-5xl' />
                     <form action="" onSubmit={formik.handleSubmit} className='w-full'>
                         {register ?
                             <h3 className='text-white mt-3 text-xl text-center'>Register</h3> :
@@ -128,7 +129,7 @@ function Auth({ register }) {
                                     name='username'
                                     value={formik.values.username}
                                     type="text"
-                                    className='bg-white text-black placeholder-gray-700 px-2 py-2 rounded-xl w-full' placeholder='User Name' />
+                                    className='w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-slate-950 placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-amber-300' placeholder='User Name' />
                                 <div className='text-yellow-400 mt-3'>{formik.errors.username}</div>
 
                             </div>
@@ -138,7 +139,7 @@ function Auth({ register }) {
                                 name='email'
                                 value={formik.values.email}
                                 type="text"
-                                className='bg-white text-black placeholder-gray-700 px-2 py-2 rounded-xl w-full' placeholder='Email Id' />
+                                className='w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-slate-950 placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-amber-300' placeholder='Email Id' />
                             <div className='text-yellow-400 mt-3'>{formik.errors.email}</div>
 
                         </div>
@@ -147,7 +148,7 @@ function Auth({ register }) {
                                 value={formik.values.password}
                                 name="password"
                                 type={togglePasswordType ? 'text' : 'password'}
-                                className='bg-white text-black placeholder-gray-700 px-2 py-2 rounded-xl w-full' placeholder='Password' />
+                                className='w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-slate-950 placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-amber-300' placeholder='Password' />
 
 
                             {
@@ -173,10 +174,10 @@ function Auth({ register }) {
                         </div>
                         <p className='text-yellow-500 mt-2'>*Never share password with others</p>
                         {register ?
-                            <button type='submit' className='bg-green-900 text-white p-2 w-full mt-2 rounded'>Signup</button>
+                            <button type='submit' className='mt-3 w-full rounded-xl bg-indigo-700 p-3 font-semibold text-white shadow-sm transition hover:bg-indigo-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-300'>Signup</button>
 
                             :
-                            <button type='submit' className='bg-green-900 text-white p-2 w-full mt-2 rounded'>Login</button>
+                            <button type='submit' className='mt-3 w-full rounded-xl bg-indigo-700 p-3 font-semibold text-white shadow-sm transition hover:bg-indigo-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-300'>Login</button>
 
                         }
                         {
@@ -197,9 +198,9 @@ function Auth({ register }) {
                         }
 
                         {register ?
-                            <p className='text-white mt-2 text-center'>Are you already user? <Link className='text-blue-700 underline' to={'/login'}>Login</Link></p>
+                            <p className='mt-4 text-center text-slate-300'>Are you already user? <Link className='font-semibold text-amber-300 underline underline-offset-4' to={'/login'}>Login</Link></p>
                             :
-                            <p className='text-white mt-2 text-center'>Are you already user? <Link className='text-blue-700 underline' to={'/signup'}>Signup</Link></p>
+                            <p className='mt-4 text-center text-slate-300'>New here? <Link className='font-semibold text-amber-300 underline underline-offset-4' to={'/signup'}>Signup</Link></p>
                         }
                     </form>
                 </div>

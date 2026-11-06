@@ -48,29 +48,29 @@ function ViewBook() {
   return (
     <>
       <UserHeader />
-      <section className='m-3 min-w-0 rounded border border-gray-900 sm:m-5 md:flex'>
-        <div className='min-w-0 p-4 sm:p-5 md:w-2/5'>
-          <img src={bookDetails?.imageUrl} alt="" className='mx-auto max-h-[32rem] w-full max-w-md rounded object-contain' />
+      <section className='mx-auto my-6 flex max-w-6xl min-w-0 flex-col rounded-2xl border border-slate-200 bg-white shadow-xl sm:my-10 md:flex-row'>
+        <div className='min-w-0 bg-slate-50 p-5 sm:p-8 md:w-2/5'>
+          <img src={bookDetails?.imageUrl} alt="" className='mx-auto max-h-[32rem] w-full max-w-md rounded-xl object-contain' />
         </div>
-        <div className='min-w-0 p-4 sm:p-5 md:flex-1'>
+        <div className='min-w-0 p-5 sm:p-8 md:flex-1'>
           <div className='flex min-w-0 items-start justify-between gap-3'>
-            <h2 className='min-w-0 break-words text-xl font-bold sm:text-2xl'>{bookDetails?.title}</h2>
+            <h2 className='min-w-0 break-words font-display text-3xl font-bold text-slate-950'>{bookDetails?.title}</h2>
 
-            <FontAwesomeIcon onClick={() => setModalStatus(true)} icon={faEye} className='mt-1 shrink-0 cursor-pointer' style={{ color: "rgb(0, 0, 0)", }} />
+            <FontAwesomeIcon onClick={() => setModalStatus(true)} icon={faEye} className='mt-1 shrink-0 cursor-pointer rounded-lg bg-indigo-50 p-2 text-indigo-700 transition hover:bg-indigo-100' />
 
           </div>
-          <h3 className='mt-4 break-words text-blue-500'> - {bookDetails?.author}</h3>
+          <h3 className='mt-4 break-words font-semibold text-indigo-700'>By {bookDetails?.author}</h3>
 
           <div className='mt-5 grid grid-cols-1 gap-2 sm:grid-cols-2 xl:grid-cols-3'>
-            <h3 className='break-words text-base font-bold sm:text-lg'>Publisher: {bookDetails?.publisher}</h3>
-            <h3 className='break-words text-base font-bold sm:text-lg'>Language: {bookDetails?.language}</h3>
-            <h3 className='break-words text-base font-bold sm:text-lg'>No:of Pages: {bookDetails?.pages}</h3>
+            <h3 className='rounded-lg bg-slate-50 p-3 break-words text-sm font-semibold text-slate-700'>Publisher: {bookDetails?.publisher}</h3>
+            <h3 className='rounded-lg bg-slate-50 p-3 break-words text-sm font-semibold text-slate-700'>Language: {bookDetails?.language}</h3>
+            <h3 className='rounded-lg bg-slate-50 p-3 break-words text-sm font-semibold text-slate-700'>Pages: {bookDetails?.pages}</h3>
           </div>
 
-          <div className='mt-5 grid grid-cols-1 gap-2 sm:grid-cols-2 xl:grid-cols-3'>
-            <h3 className='break-words text-base font-bold sm:text-lg'>Category: {bookDetails?.category}</h3>
-            <h3 className='break-words text-base font-bold sm:text-lg'>Real Price:₹{bookDetails?.price}</h3>
-            <h3 className='break-words text-base font-bold sm:text-lg'>ISBN: {bookDetails?.isbn}</h3>
+          <div className='mt-3 grid grid-cols-1 gap-2 sm:grid-cols-2 xl:grid-cols-3'>
+            <h3 className='rounded-lg bg-slate-50 p-3 break-words text-sm font-semibold text-slate-700'>Category: {bookDetails?.category}</h3>
+            <h3 className='rounded-lg bg-slate-50 p-3 break-words text-sm font-semibold text-slate-700'>Price: ₹{bookDetails?.price}</h3>
+            <h3 className='rounded-lg bg-slate-50 p-3 break-words text-sm font-semibold text-slate-700'>ISBN: {bookDetails?.isbn}</h3>
           </div>
 
           <p className='mt-5 break-words text-justify leading-relaxed'>
@@ -78,8 +78,8 @@ function ViewBook() {
           </p>
 
           <div className='mt-5 flex flex-wrap justify-end gap-2'>
-            <Link to={'/all-books'} className='rounded bg-blue-900 p-2 text-white flex justify-center items-center'><FontAwesomeIcon icon={faBackward} />Back</Link>
-            <button className='rounded bg-green-900 p-2 text-white' onClick={makePayment}>Buy Now
+            <Link to={'/all-books'} className='flex items-center justify-center rounded-lg border border-slate-300 px-4 py-2.5 font-semibold text-slate-700 transition hover:bg-slate-100'><FontAwesomeIcon icon={faBackward} />Back</Link>
+            <button className='rounded-lg bg-indigo-700 px-5 py-2.5 font-semibold text-white shadow-sm transition hover:bg-indigo-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-700' onClick={makePayment}>Buy Now
               <br />
               @ ${bookDetails?.discountPrice}
             </button>
@@ -98,7 +98,7 @@ function ViewBook() {
 
                 {/* modal header */}
 
-                <div className='flex shrink-0 items-center justify-between bg-black p-3 text-white'>
+                <div className='flex shrink-0 items-center justify-between bg-slate-950 p-4 text-white'>
                   <h3>Book Images</h3>
                   <FontAwesomeIcon icon={faXmark} onClick={() => setModalStatus(false)} className='cursor-pointer' />
 

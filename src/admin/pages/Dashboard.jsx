@@ -53,30 +53,32 @@ function Dashboard() {
   return (
     <>
       <AdminHeader />
-      <div className='grid grid-cols-1 md:grid-cols-5'>
+      <div className='min-h-screen bg-slate-50 md:grid md:grid-cols-5'>
         <div className='md:col-span-1'>
           <Sidebar />
 
         </div>
         <div className='min-w-0 md:col-span-4'>
-          <div className='p-3 sm:p-5'>
+          <div className='p-4 sm:p-6 lg:p-8'>
+            <p className='text-sm font-bold uppercase tracking-[0.2em] text-indigo-700'>Overview</p>
+            <h1 className='mt-1 font-display text-3xl font-bold text-slate-950'>Admin dashboard</h1>
             <div className='grid grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-3'>
-              <div className='flex min-h-28 min-w-0 items-center justify-center gap-4 rounded bg-blue-600 p-4 sm:p-6'>
-                <FontAwesomeIcon className='shrink-0 text-2xl sm:text-3xl' icon={faFile} style={{ color: "rgb(0, 0, 0)", }} />
+              <div className='flex min-h-32 min-w-0 items-center gap-4 rounded-2xl bg-indigo-700 p-5 text-white shadow-lg shadow-indigo-200 sm:p-6'>
+                <FontAwesomeIcon className='shrink-0 rounded-xl bg-white/15 p-3 text-2xl text-amber-300 sm:text-3xl' icon={faFile} />
                 <div className='min-w-0'>
                   <h3 className='text-base font-medium sm:text-lg'>Total Number of Books</h3>
                   <h3 className='text-xl font-bold sm:text-2xl'>{books?.length}</h3>
                 </div>
               </div>
-              <div className='flex min-h-28 min-w-0 items-center justify-center gap-4 rounded bg-green-600 p-4 sm:p-6'>
-                <FontAwesomeIcon className='shrink-0 text-2xl sm:text-3xl' icon={faUser} style={{ color: "rgb(0, 0, 0)", }} />
+              <div className='flex min-h-32 min-w-0 items-center gap-4 rounded-2xl bg-teal-700 p-5 text-white shadow-lg shadow-teal-100 sm:p-6'>
+                <FontAwesomeIcon className='shrink-0 rounded-xl bg-white/15 p-3 text-2xl text-amber-200 sm:text-3xl' icon={faUser} />
                 <div className='min-w-0'>
                   <h3 className='text-base font-medium sm:text-lg'>Total Number of Users</h3>
                   <h3 className='text-xl font-bold sm:text-2xl'>{users?.length}</h3>
                 </div>
               </div>
-              <div className='flex min-h-28 min-w-0 items-center justify-center gap-4 rounded bg-yellow-600 p-4 sm:p-6'>
-                <FontAwesomeIcon className='shrink-0 text-2xl sm:text-3xl' icon={faSearch} style={{ color: "rgb(0, 0, 0)", }} />
+              <div className='flex min-h-32 min-w-0 items-center gap-4 rounded-2xl bg-amber-500 p-5 text-slate-950 shadow-lg shadow-amber-100 sm:p-6'>
+                <FontAwesomeIcon className='shrink-0 rounded-xl bg-white/30 p-3 text-2xl sm:text-3xl' icon={faSearch} />
                 <div className='min-w-0'>
                   <h3 className='text-base font-medium sm:text-lg'>Total Number of Employess</h3>
                   <h3 className='text-xl font-bold sm:text-2xl'>100+</h3>
@@ -85,8 +87,8 @@ function Dashboard() {
 
             </div>
           </div>
-          <div className='mt-6 grid grid-cols-1 gap-5 p-3 sm:p-5 md:mt-8 xl:grid-cols-2'>
-            <div className='min-w-0 rounded-lg border border-slate-200 p-3 sm:p-5'>
+          <div className='mt-2 grid grid-cols-1 gap-5 p-4 sm:p-6 lg:p-8 xl:grid-cols-2'>
+            <div className='min-w-0 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm sm:p-6'>
               <h2 className='mb-4 text-base font-bold sm:text-lg'>
                 Book Purchase Ratio
               </h2>
@@ -113,7 +115,7 @@ function Dashboard() {
                 </BarChart>
               </ResponsiveContainer>
             </div>
-            <div className='min-w-0 rounded-lg border border-slate-200 p-3 sm:p-5'>
+            <div className='min-w-0 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm sm:p-6'>
               <h2 className='text-base font-bold sm:text-lg'>
                 Growth Ratio(Yearly)
               </h2>

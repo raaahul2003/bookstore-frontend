@@ -192,52 +192,52 @@ function Profile() {
   return (
     <>
       <UserHeader />
-      <div className='h-28 bg-gray-900 sm:h-40 md:h-[200px]'>
+      <div className='h-28 bg-gradient-to-r from-slate-950 via-indigo-950 to-indigo-800 sm:h-40 md:h-[200px]'>
       </div>
       <div className='ml-4 -mt-16 h-32 w-32 sm:ml-10 sm:-mt-28 sm:h-48 sm:w-48'>
-        <img className='h-28 w-28 rounded-full object-cover sm:h-40 sm:w-40' src={userDp == "" ? 'https://static.vecteezy.com/system/resources/previews/019/879/186/non_2x/user-icon-on-transparent-background-free-png.png' : userDp?.startsWith('https://lh3.googleusercontent.com') ? userDp : `${axiosInstance.defaults.baseURL}/uploads/${userDp}`} alt="" />
+        <img className='h-28 w-28 rounded-full border-4 border-white object-cover shadow-xl ring-2 ring-amber-300 sm:h-40 sm:w-40' src={userDp == "" ? 'https://static.vecteezy.com/system/resources/previews/019/879/186/non_2x/user-icon-on-transparent-background-free-png.png' : userDp?.startsWith('https://lh3.googleusercontent.com') ? userDp : `${axiosInstance.defaults.baseURL}/uploads/${userDp}`} alt="" />
       </div>
       <div className='mx-auto my-5 w-full max-w-7xl min-w-0 px-4 sm:px-6 md:px-10'>
         <div className='flex flex-col items-start justify-between gap-3 sm:flex-row sm:items-center'>
-          <h1 className='max-w-full break-words text-2xl font-bold'>{userName}</h1>
+          <h1 className='max-w-full break-words font-display text-3xl font-bold text-slate-950'>{userName}</h1>
           <div>
             <Edit />
           </div>
           {/* <button className='bg-blue-900 text-white p-2 rounded' onClick={() => seteditStatus(true)}>Edit</button> */}
 
         </div>
-        <p className='break-words p-3 text-justify text-base sm:p-5 sm:text-xl'>
+        <p className='break-words py-5 text-justify leading-7 text-slate-600 sm:text-lg'>
           {userBio == "" ? "No Bio" : userBio}
         </p>
         {/* tabs */}
-        <div className='flex w-full flex-wrap items-center justify-center gap-2 sm:gap-5'>
+        <div className='flex w-full flex-wrap items-center justify-center gap-2 rounded-xl bg-slate-100 p-2 sm:gap-3'>
           <p onClick={() => {
             setsellbookStatus(true);
             setbookStatus(false);
             setpurchaseStatus(false)
-          }} className={sellbookStatus ? 'text-blue-800 border p-2 rounded' : 'text-black p-2'}>Sell Book</p>
+          }} className={sellbookStatus ? 'cursor-pointer rounded-lg bg-white px-4 py-2 font-semibold text-indigo-700 shadow-sm' : 'cursor-pointer rounded-lg px-4 py-2 font-medium text-slate-600 hover:bg-white/70'}>Sell Book</p>
           <p onClick={() => {
             setsellbookStatus(false);
             setbookStatus(true);
             setpurchaseStatus(false)
-          }} className={bookStatus ? 'text-blue-800 border p-2 rounded' : 'text-black p-2'}>Book Status</p>
+          }} className={bookStatus ? 'cursor-pointer rounded-lg bg-white px-4 py-2 font-semibold text-indigo-700 shadow-sm' : 'cursor-pointer rounded-lg px-4 py-2 font-medium text-slate-600 hover:bg-white/70'}>Book Status</p>
           <p onClick={() => {
             setsellbookStatus(false);
             setbookStatus(false);
             setpurchaseStatus(true)
-          }} className={purchaseStatus ? 'text-blue-800 border p-2 rounded' : 'text-black p-2'}>Purchase History</p>
+          }} className={purchaseStatus ? 'cursor-pointer rounded-lg bg-white px-4 py-2 font-semibold text-indigo-700 shadow-sm' : 'cursor-pointer rounded-lg px-4 py-2 font-medium text-slate-600 hover:bg-white/70'}>Purchase History</p>
         </div>
         {/* contents */}
         {
           sellbookStatus &&
-          <div className='min-h-screen w-full min-w-0 bg-white p-2 sm:p-5 md:p-10'>
-            <div className='w-full min-w-0 rounded bg-gray-400 p-3 text-center sm:p-5'>
-              <h1 className='font-bold text-xl'>Book Details</h1>
+          <div className='w-full min-w-0 py-6 sm:py-8'>
+            <div className='w-full min-w-0 rounded-2xl bg-slate-950 p-4 text-center shadow-xl sm:p-7'>
+              <h1 className='font-display text-2xl font-bold text-white'>Book Details</h1>
               <form className='grid min-w-0 grid-cols-1 md:grid-cols-2'>
                 <div className='min-w-0 p-2 sm:p-4'>
-                  <input value={bookDetails.title} onChange={(e) => setBookDetails({ ...bookDetails, title: e.target.value })} type="text" placeholder='Title' className='w-full bg-white p-2 mt-4 rounded' />
+                  <input value={bookDetails.title} onChange={(e) => setBookDetails({ ...bookDetails, title: e.target.value })} type="text" placeholder='Title' className='mt-4 w-full rounded-lg bg-white px-4 py-3 text-slate-900 focus:outline-none focus:ring-2 focus:ring-amber-300' />
 
-                  <input value={bookDetails.author} onChange={(e) => setBookDetails({ ...bookDetails, author: e.target.value })} type="text" placeholder='Author' className='w-full bg-white p-2 mt-4 rounded' />
+                  <input value={bookDetails.author} onChange={(e) => setBookDetails({ ...bookDetails, author: e.target.value })} type="text" placeholder='Author' className='mt-4 w-full rounded-lg bg-white px-4 py-3 text-slate-900 focus:outline-none focus:ring-2 focus:ring-amber-300' />
 
                   <input value={bookDetails.pages} onChange={(e) => setBookDetails({ ...bookDetails, pages: e.target.value })} type="text" placeholder='No of Pages' className='w-full bg-white p-2 mt-4 rounded' />
 
@@ -290,8 +290,8 @@ function Profile() {
 
 
                   <div className='flex justify-end gap-2'>
-                    <button type='button' className='rounded bg-red-500 px-3 py-2 sm:p-3' onClick={resetForm}>RESET</button>
-                    <button type='button' className='rounded bg-green-500 px-3 py-2 sm:p-3' onClick={handleSubmit}>SUBMIT</button>
+                    <button type='button' className='rounded-lg border border-slate-400 px-4 py-3 font-semibold text-white transition hover:bg-white/10' onClick={resetForm}>RESET</button>
+                    <button type='button' className='rounded-lg bg-amber-400 px-4 py-3 font-semibold text-slate-950 transition hover:bg-amber-300' onClick={handleSubmit}>SUBMIT</button>
                   </div>
                 </div>
               </form>
@@ -300,12 +300,12 @@ function Profile() {
         }
         {
           bookStatus &&
-          <div className='my-8 w-full min-w-0 rounded p-3 shadow sm:my-12 sm:p-6 md:my-20 md:p-10'>
+          <div className='my-8 w-full min-w-0 rounded-2xl border border-slate-200 bg-white p-3 shadow-sm sm:my-12 sm:p-6 md:my-16 md:p-10'>
 
             {
               uploadBooks.length > 0 ?
                 uploadBooks?.map(book => (
-                  <div className='mt-4 min-w-0 rounded bg-gray-300 p-3 sm:p-5'>
+                  <div className='mt-4 min-w-0 rounded-xl bg-slate-50 p-3 sm:p-5'>
                     <div className='grid min-w-0 grid-cols-1 items-start gap-4 sm:gap-5 md:grid-cols-[minmax(0,2fr)_minmax(0,1fr)] md:items-center lg:grid-cols-[minmax(0,3fr)_minmax(10rem,1fr)]'>
                       <div className='min-w-0 px-2 sm:px-4 text-center'>
                         <h1 className='break-words text-xl sm:text-2xl'>{book.title}</h1>
@@ -341,11 +341,11 @@ function Profile() {
         }
         {
           purchaseStatus &&
-          <div className='my-8 w-full min-w-0 rounded p-3 shadow sm:my-12 sm:p-6 md:my-20 md:p-10'>
+          <div className='my-8 w-full min-w-0 rounded-2xl border border-slate-200 bg-white p-3 shadow-sm sm:my-12 sm:p-6 md:my-16 md:p-10'>
             {
               purchaseBooks?.length > 0 ?
                 purchaseBooks?.map(book => (
-                  <div className='mt-4 min-w-0 rounded bg-gray-300 p-3 sm:p-5'>
+                  <div className='mt-4 min-w-0 rounded-xl bg-slate-50 p-3 sm:p-5'>
                     <div className='grid min-w-0 grid-cols-1 items-center gap-5 md:grid-cols-[minmax(0,3fr)_minmax(0,1fr)]'>
                       <div className='px-2 sm:px-4'>
                         <h1 className='text-2xl'>{book?.title}</h1>

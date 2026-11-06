@@ -44,7 +44,7 @@ function App() {
         <Route path='/contact' element={<Contact />} />
 
         {
-          role === 'user' &&
+          role == 'user' &&
           <>
             <Route path='/profile/:id' element={<Profile />} />
             <Route path='/view/:id/book' element={<ViewBook />} />
@@ -53,7 +53,7 @@ function App() {
           </>
         }
         {
-          role === 'admin' &&
+          role == 'admin' &&
           <>
             <Route path='/admin-dashboard' element={<Dashboard />} />
             <Route path='/admin-resource' element={<Resource />} />

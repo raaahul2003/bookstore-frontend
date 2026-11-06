@@ -41,12 +41,13 @@ function Contact() {
   return (
     <>
       <UserHeader />
-      <div className='mx-auto w-full max-w-7xl px-3 py-4 sm:px-5 md:px-8 lg:px-10'>
-        <h1 className='text-center text-2xl font-bold sm:text-3xl'>
+      <div className='min-h-screen bg-slate-50 py-10'><div className='mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8'>
+        <p className='text-center text-sm font-bold uppercase tracking-[0.2em] text-indigo-700'>We’d love to hear from you</p>
+        <h1 className='mt-2 text-center font-display text-3xl font-bold text-slate-950 sm:text-4xl'>
           Contacts
         </h1>
-        <div className='p-4 sm:p-6 lg:p-8'>
-          <p className='text-justify sm:text-center'>
+        <div className='mx-auto max-w-3xl py-6 sm:py-8'>
+          <p className='text-center leading-7 text-slate-600'>
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit sed natus ut iure unde! Cum in rerum labore aperiam quibusdam hic, quas corporis culpa iste? Doloribus, eveniet porro. Exercitationem, vero. Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere itaque reiciendis tempore molestiae similique natus quisquam fuga. Culpa fugit cum illum explicabo odit eius itaque harum, quod placeat veritatis?
           </p>
         </div>
@@ -74,19 +75,19 @@ function Contact() {
 
         </div>
 
-        <div className='grid grid-cols-1 gap-4 p-2 sm:p-5 lg:grid-cols-2'>
-          <div className='rounded bg-gray-300 p-3 sm:p-5'>
+        <div className='mt-8 grid grid-cols-1 gap-6 p-2 sm:p-5 lg:grid-cols-2'>
+          <div className='rounded-2xl bg-slate-950 p-3 shadow-xl sm:p-5'>
             <div className='flex flex-col items-center justify-center p-2 sm:p-5'>
-              <h1 className='text-center text-xl font-bold sm:text-2xl'>Send Me Message</h1>
+              <h1 className='text-center font-display text-2xl font-bold text-white sm:text-3xl'>Send a message</h1>
 
               <form className='mt-6 flex w-full flex-col gap-2 sm:mt-10'
                 ref={form} onSubmit={sendEmail}>
 
-                <input type="text" name="name" placeholder='Name' className='bg-white w-full p-2 rounded' />
-                <input type="email" name="email" placeholder='Email' className='bg-white w-full p-2 rounded' />
-                <textarea name="title" id="" placeholder='Message' className='bg-white w-full p-2 rounded' rows={8}></textarea>
+                <input type="text" name="name" placeholder='Name' className='w-full rounded-lg bg-white px-4 py-3 text-slate-900 focus:outline-none focus:ring-2 focus:ring-amber-300' />
+                <input type="email" name="email" placeholder='Email' className='w-full rounded-lg bg-white px-4 py-3 text-slate-900 focus:outline-none focus:ring-2 focus:ring-amber-300' />
+                <textarea name="title" id="" placeholder='Message' className='w-full rounded-lg bg-white px-4 py-3 text-slate-900 focus:outline-none focus:ring-2 focus:ring-amber-300' rows={8}></textarea>
 
-                <button type='submit' value="Send" className='w-full bg-gray-950 text-white p-2 rounded font-bold'>Send <FontAwesomeIcon icon={faPaperPlane} /></button>
+                <button type='submit' value="Send" className='w-full rounded-lg bg-amber-400 p-3 font-bold text-slate-950 transition hover:bg-amber-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-300'>Send <FontAwesomeIcon icon={faPaperPlane} /></button>
 
               </form>
 
@@ -96,7 +97,7 @@ function Contact() {
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d125218.54684727985!2d75.72841394018309!3d11.255555506919812!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba65938563d4747%3A0x32150641ca32ecab!2sKozhikode%2C%20Keralam!5e0!3m2!1sen!2sin!4v1790765730071!5m2!1sen!2sin" width="600" height="450" allowfllscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" className='aspect-video w-full rounded'></iframe>
           </div>
         </div>
-      </div>
+      </div></div>
       {/* toaser */}
       <ToastContainer position='top-center' theme='colored' autoClose={3000} />
     </>
