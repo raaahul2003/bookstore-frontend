@@ -1,16 +1,75 @@
-# React + Vite
+# Bookstore Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive online bookstore frontend built with React and Vite. Users can browse and search for books, view book details, and access account, selling, and purchasing features.
 
-Currently, two official plugins are available:
+## Related repository
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- [Bookstore Backend](https://github.com/raaahul2003/Bookstore-Server)
 
-## React Compiler
+## Tech stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React
+- Vite
+- React Router
+- Tailwind CSS
+- Axios
 
-## Expanding the ESLint configuration
+## Getting started
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Prerequisites
+
+- Node.js (LTS recommended)
+- npm
+- The [Bookstore backend](https://github.com/raaahul2003/Bookstore-Server) running locally or deployed
+
+### Install and run
+
+```bash
+git clone https://github.com/raaahul2003/bookstore-frontend.git
+cd bookstore-frontend
+npm install
+npm run dev
+```
+
+Open the local URL shown in your terminal.
+
+## Available scripts
+
+| Command | Description |
+| --- | --- |
+| `npm run dev` | Start the development server |
+| `npm run build` | Create a production build |
+| `npm run preview` | Preview the production build |
+| `npm run lint` | Run ESLint |
+
+## Backend connection
+
+The frontend currently sends API requests to `http://localhost:3000`. To use a deployed backend, update the API base URL in `src/api/axiosinstance.js`.
+
+Do not put private keys, passwords, or other secrets in frontend code.
+
+## Project structure
+
+```text
+src/
+├── admin/       # Admin pages and components
+├── api/         # Axios configuration and API service
+├── components/  # Shared UI components
+├── context/     # React context providers
+├── hooks/       # Custom React hooks
+├── pages/       # Shared pages
+├── services/    # API functions
+└── user/        # User-facing pages and components
+```
+
+## Production build
+
+```bash
+npm run build
+```
+
+The generated files are placed in the `dist/` folder.
+
+## License
+
+No license has been specified yet.
